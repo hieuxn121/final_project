@@ -19,6 +19,11 @@
                                             <input type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password" name="pwd">
                                         </div>
+                                        <?php if (isset($_COOKIE['error'])) { ?>
+                                              <div style="color: red">
+                                                <?php echo $_COOKIE['error'] ?>
+                                              </div>
+                                        <?php } ?>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">

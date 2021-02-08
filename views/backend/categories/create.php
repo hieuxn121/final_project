@@ -1,4 +1,4 @@
-
+<?php require_once('upload.php') ?>
 <?php require_once('views/backend/includes/header.php') ?>
 <div class="col-md-9">
                     <div class="col-md-12 page-body">
@@ -7,7 +7,7 @@
                         	 <h3 align="center">DevMind - Education And Technology Group</h3>
 							    <h3 align="center">Add New Category</h3>
 							    <hr>
-							        <form action="index.php?type=backend&mod=category&act=store" method="POST" role="form" enctype="multipart/form-data">
+							        <form action="index.php?type=backend&mod=category&act=store" method="POST" role="form" enctype="multipart/form-data" enctype="multipart/form-data">
 							            <div class="form-group">
 							                <label for="">ID</label>
 							                <input type="text" class="form-control" id="" placeholder="" name="id">
@@ -20,10 +20,10 @@
 							                <label for="">Parent ID</label>
 							                <input type="text" class="form-control" id="" placeholder="" name="parent_id">
 							            </div>
-							            <div class="form-group">
+							           <div class="form-group">
 							                <label for="">Thumbnail</label>
 							                <input type="text" class="form-control" id="" placeholder="" name="thumbnail">
-							            </div>
+							            </div> 
 							            <div class="form-group">
 							                <label for="">Slug</label>
 							                <input type="text" class="form-control" id="" placeholder="" name="slug">

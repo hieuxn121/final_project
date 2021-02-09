@@ -14,12 +14,15 @@
 		//Lưu trữ dữ liệu người dùng tạo ra
 		public function store(){
 			 $data = $_POST;
+			  if (isset($_POST['upload'])) {
+				   $image = $_FILES['avatar']['name'];
+				}
 			 $data_insert = [
 		    	'id' => $data['id'],
 		      	'name' => $data['name'],
 		      	'email' => $data['email'],
 		    	'password' => $data['password'],
-		    	'avatar' => $data['avatar'],
+		    	'avatar' => $image,
 		      'created_at' => $data['created_at']
 		    ];
 		    $user = new User();
@@ -37,11 +40,18 @@
 		}
 		public function update(){
 			$data = $_POST;
+			if (isset($_POST['upload'])) {
+				if ($_FILES['avatar']['name']=='') {
+					$image = $data['avatar1'];
+				}
+				else
+				   $image = $_FILES['avatar']['name'];
+				}
 			$data_insert = [
 				'name' => $data['name'],
 				'email' => $data['email'],
 				'password' => $data['password'],
-				'avatar' => $data['avatar'],
+				'avatar' => $image,
 				'created_at' => $data['created_at']
 			];
 			$user = new User();

@@ -15,11 +15,15 @@ require_once('controllers/BaseController.php');
 			$check = $user_model->check($username,$pwd);
 			if ($check) {
 				$_SESSION['login'] = true;
+				$email = '"'.$username.'"';
+				$user = $user_model->findE($email);
+				$_SESSION['user_login'] = $user['name'];
+				$_SESSION['ava_login'] = $user['avatar'];
 				setcookie('success', 'Login successfully !!!', time() + 2);
 				$this->redirect('index.php?type=backend&mod=dashboard&act=index');
 			}
 			else {
-				$_SESSION['login'] = false;
+				$_SESSION['login'] = null;
 				setcookie('error', 'Wrong email or password !!!', time() + 2);
 				$this->redirect('index.php?type=backend&mod=auth&act=login');
 			}

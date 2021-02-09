@@ -21,14 +21,18 @@
                                             <input type="text" class="form-control" id="" placeholder="" name="password" value="<?php echo $user['password']?>">
                                         </div>
                                          <div class="form-group">
-                                            <label for="">Slug</label>
-                                            <input type="text" class="form-control" id="" placeholder="" name="avatar" value="<?php echo $user['avatar']?>">
+                                            <label for="">Avatar</label>
+                                            <div class="user">
+                                                <?php echo "<img src='images/user/".$user['avatar']."' >"; ?>
+                                                <input type="hidden" name="avatar1" value="<?php echo $user['avatar']?>">        
+                                            </div>
+                                            <input type="file" class="form-control" id="" placeholder="" name="avatar">
                                         </div>
                                          <div class="form-group">
                                             <label for="">Created At</label>
                                             <input type="text" class="form-control" id="" placeholder="" name="created_at"  value="<?php echo $user['created_at']?>">
                                         </div>
-                                    <button style="margin-bottom: 30px" type="submit" class="btn btn-primary">Create</button>
+                                    <button style="margin-bottom: 30px" type="submit" name="upload" class="btn btn-primary">Create</button>
                                 </form>
                             </div>    
                         </div>

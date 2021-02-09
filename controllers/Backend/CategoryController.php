@@ -19,11 +19,14 @@
  	}
  	public function store(){
 			 $data = $_POST;
+				  if (isset($_POST['upload'])) {
+				    $image = $_FILES['thumbnail']['name'];
+				  }
 			 $data_insert = [
     		'id' => $data['id'],
 	      	'name' => $data['name'],
 	    	'parent_id' => $data['parent_id'],
-	    	'thumbnail' => $data['thumbnail'],
+	    	'thumbnail' => $image,
 	    	'slug' => $data['slug'],
 	        'description' => $data['description'],
 	        'created_at' => $data['created_at']
@@ -43,10 +46,17 @@
 		}
 	public function update(){
 			$data = $_POST;
+			if (isset($_POST['upload'])) {
+				if ($_FILES['thumbnail']['name']=='') {
+					$image = $data['thumbnail1'];
+				}
+				else
+				   $image = $_FILES['thumbnail']['name'];
+				}
 			$data_insert = [
 			'name' => $data['name'],
 			'parent_id' => $data['parent_id'],
-			'thumbnail' => $data['thumbnail'],
+			'thumbnail' => $image,
 			'slug' => $data['slug'],
 			'description' => $data['description'],
 			'created_at' => $data['created_at']

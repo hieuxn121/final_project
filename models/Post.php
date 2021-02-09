@@ -9,6 +9,10 @@
 			$posts = $this->select($this->table);
 			return $posts;
 		}
+		public function getListView(){
+			$posts = $this->selectView($this->table);
+			return $posts;
+		}
 		public function create($data){
 			$status = $this->insert($this->table,$data);
 			return $status;

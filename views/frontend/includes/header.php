@@ -79,11 +79,10 @@
 			<div class="fh5co-box">
 				<h3 class="heading">Categories</h3>
 				<ul>
-					<li><a href="#">Travel</a></li>
-					<li><a href="#">Style</a></li>
-					<li><a href="#">Photography</a></li>
-					<li><a href="#">Food &amp; Drinks</a></li>
-					<li><a href="#">Culture</a></li>
+					<li><a href="index.php?type=frontend&mod=home&act=index">Home</a></li>
+					<?php foreach ($categories as $key => $value){ ?>
+						<li><a href="index.php?type=frontend&mod=category&act=index&id=<?php echo $value['id'] ?>"><?php echo $value['name'] ?></a></li>
+					<?php } ?>
 				</ul>
 			</div>
 			<h3 class="heading"><a href="index.php?type=backend&mod=auth&act=login">Log in</a></h3>
@@ -91,7 +90,10 @@
 				<h3 class="heading">Search</h3>
 				<form action="#">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Type a keyword">
+						<form action="" method="POST">
+							<input type="text" class="form-control" placeholder="Type a keyword" name="search">
+							<input type="submit">
+						</form>	
 					</div>
 				</form>
 			</div>

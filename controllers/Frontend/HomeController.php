@@ -8,11 +8,13 @@
 		public function index(){
 			$post = new Post();
 			$posts = $post->getList();
+			$post2 = new Post();
+			$posts2 = $post2->getListView();
 			$category = new Category();
 			$categories = $category->getList();
 			$user = new User();
 			$users = $user->getList();
-			$this->view('frontend/home/index.php',['posts' => $posts, 'users' => $users, 'categories' => $categories]);
+			$this->view('frontend/home/index.php',['posts' => $posts, 'posts2' => $posts2 ,'users' => $users, 'categories' => $categories]);
 		}
 	}
 ?>

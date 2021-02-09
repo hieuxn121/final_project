@@ -16,11 +16,14 @@
 		//Lưu trữ dữ liệu người dùng tạo ra
 		public function store(){
 			 $data = $_POST;
+			  if (isset($_POST['upload'])) {
+				    $image = $_FILES['thumbnail']['name'];
+				  }
 			 $data_insert = [
 		    	'id' => $data['id'],
 		      'title' => $data['title'],
 		    	'description' => $data['description'],
-		    	'thumbnail' => $data['thumbnail'],
+		    	'thumbnail' => $image,
 		    	'content' => $data['content'],
 		      'slug' => $data['slug'],
 		      'view_count' => $data['view_count'],
@@ -43,10 +46,17 @@
 		}
 		public function update(){
 			$data = $_POST;
+			if (isset($_POST['upload'])) {
+				if ($_FILES['thumbnail']['name']=='') {
+					$image = $data['thumbnail1'];
+				}
+				else
+				   $image = $_FILES['thumbnail']['name'];
+				}
 			$data_insert = [
 				'title' => $data['title'],
 				'description' => $data['description'],
-				'thumbnail' => $data['thumbnail'],
+				'thumbnail' => $image,
 				'content' => $data['content'],
 				'slug' => $data['slug'],
 				'view_count' => $data['view_count'],

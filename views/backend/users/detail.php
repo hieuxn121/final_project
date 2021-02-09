@@ -33,7 +33,7 @@
                                                   <td><?php echo $user['name']; ?></td?>
                                                   <td><?php echo $user['email']; ?></td?>
                                                   <td><?php echo $user['password']; ?></td?>
-                                                  <td><?php echo $user['avatar']; ?></td>
+                                                  <td class="user"><?php echo "<img src='images/user/".$user['avatar']."' >"; ?></td>
                                                   <td><?php echo $user['created_at']; ?></td>
                                               </tr>
                                         </tbody>

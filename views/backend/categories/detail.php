@@ -33,7 +33,7 @@
                                                   <td><?php echo $categories['id']; ?></td?>
                                                   <td><?php echo $categories['name']; ?></td?>
                                                   <td><?php echo $categories['parent_id']; ?></td?>
-                                                  <td><?php echo $categories['thumbnail']; ?></td?>
+                                                  <td class="cate"><?php echo "<img src='images/category/".$categories['thumbnail']."' >"; ?></td?>
                                                   <td><?php echo $categories['slug']; ?></td?>
                                                   <td><?php echo $categories['description']; ?></td>
                                                   <td><?php echo $categories['created_at']; ?></td>

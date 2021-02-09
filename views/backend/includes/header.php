@@ -38,7 +38,20 @@
        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-
+    <style>
+      .cate img{
+        width: 200px;
+        height: 150px;
+      }
+      .user img{
+        width: 50px;
+        height: 50px;
+      }
+      .post img{
+         width: 200px;
+        height: 150px;
+      }
+    </style>
   </head>
 
  <body>
@@ -65,7 +78,9 @@
                    <div class="about-fixed">
                     
                      <div class="my-pic">
-                        <img src="assets/images/pic/ava.png" alt="">
+                      <?php if (isset($_SESSION['ava_login'])) { ?>
+                                 <?php echo "<img src='images/user/".$_SESSION['ava_login']."' >" ?>
+                      <?php } ?>
                         <a href="javascript:void(0)" class="collapsed" data-target="#menu" data-toggle="collapse"><i class="icon-menu menu"></i></a>
                          <div id="menu" class="collapse">
                            <ul class="menu-link">
@@ -82,12 +97,16 @@
                       <div class="my-detail">
                         
                         <div class="white-spacing" >
-                            <h1>Alex Parker</h1>
+                            <h1>
+                              <?php if (isset($_SESSION['user_login'])) { ?>
+                                 <?php echo $_SESSION['user_login']; ?>
+                              <?php } ?>
+                            </h1>
                             <span>Web Developer</span>
                         </div><br><br>
-                        <?php if (isset($_SESSION['login'])) { ?>
+                          <?php if ( isset($_SESSION['login'])){ ?>
                           <a href="index.php?type=backend&mod=auth&act=logout">Log out</a>             
-                        <?php } ?>
+                          <?php } ?>
                        <ul class="social-icon">
                          <li><a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
                          <li><a href="#" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a></li>

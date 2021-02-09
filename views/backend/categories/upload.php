@@ -1,19 +1,23 @@
-<?php 
-require_once('upload.php');
-    if (isset($_POST['submit'])) {
-        $notice = file_upload('uploads','file_upload');
-        if(gettype($notice) == "array"){
-            foreach ($notice as $key => $value) {
-                echo $value.'<br>';
-            }
-        }else{
-            echo "File name is: " . $notice; // Trả về tên file nếu upload thành công
-            $data = array(
-                'name' => $_POST['name_file'],
-                'file_name' => basename( $_FILES["file_upload"]["name"])
+<?php
+  // Create database connection
+  $db = mysqli_connect("localhost", "root", "", "demo2");
 
-            );
-            $_SESSION['uploads'][] = $data;
-        }
-    }
+  // Initialize message variable
+  $msg = "";
+
+  // If upload button is clicked ...
+  if (isset($_POST['upload'])) {
+    // Get image name
+    $image = $_FILES['thumbnail']['name'];
+    // Get text
+    $image_text = mysqli_real_escape_string($db, $_POST['image_text']);
+
+    // image file directory
+    $target = "images/".basename($image);
+
+    $sql = "INSERT INTO categories (thumbnail) VALUES ('$image')";
+    // execute query
+    mysqli_query($db, $sql);
+  }
+  $result = mysqli_query($db, "SELECT * FROM categories");
 ?>

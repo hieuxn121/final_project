@@ -30,7 +30,7 @@
                                         </thead>
                                         <tbody>
                                               <tr>
-                                                  <td><?php echo $post['thumbnail']; ?></td?>
+                                                  <td class="post"><?php echo "<img src='images/post/".$post['thumbnail']."' >"; ?></td?>
                                                   <td><p style="height: 300px; overflow: auto;"><?php echo $post['content']?></p></td>
                                                   <td><?php echo $post['slug']; ?></td>
                                                   <td><?php echo $post['view_count']; ?></td>

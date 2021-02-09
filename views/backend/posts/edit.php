@@ -18,7 +18,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">Thumbnail</label>
-                                        <input type="text" class="form-control" id="" placeholder="" name="thumbnail" value="<?php echo $post['thumbnail']?>">
+                                        <div class="post">
+                                                <?php echo "<img src='images/post/".$post['thumbnail']."' >"; ?>
+                                                <input type="hidden" name="thumbnail1" value="<?php echo $post['thumbnail']?>">     
+                                        </div>
+                                        <input type="file" class="form-control" id="" placeholder="" name="thumbnail">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Content</label>
@@ -44,7 +48,7 @@
                                         <label for="">Created At</label>
                                         <input type="text" class="form-control" id="" placeholder="" name="created_at"  value="<?php echo $post['created_at']?>">
                                     </div>
-                                    <button style="margin-bottom: 30px" type="submit" class="btn btn-primary">Create</button>
+                                    <button style="margin-bottom: 30px" type="submit" name="upload" class="btn btn-primary">Create</button>
                                 </form>
                             </div>    
                         </div>

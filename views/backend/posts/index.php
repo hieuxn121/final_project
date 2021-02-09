@@ -5,9 +5,9 @@
                         
                             
                             <div class="sub-title">
-                              <h2>Users</h2>
+                              <h2>Post</h2>
                                 <a href="contact.html"><i class="icon-envelope"></i></a>
-                                <p><a href="index.php?type=backend&mod=post&act=create">Add New User</a></p>
+                                <p><a href="index.php?type=backend&mod=post&act=create">Add New Post</a></p>
                                 <?php if (isset($_COOKIE['add_new'])) { ?>
                                   <div class="alert alert-success" role="alert">
                                     <?php echo $_COOKIE['add_new'] ?>

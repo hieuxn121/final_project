@@ -34,6 +34,10 @@
 			$user = $this->getID($this->table,$id);
 			return $user;
 		}
+		public function findE($email){
+			$user = $this->getEmail($this->table,$email);
+			return $user;
+		}
 		public function del($id){
 			$status = $this->delete($this->table,$id);
 			return $status;

@@ -26,13 +26,13 @@
 					            </div>
 					            <div class="form-group">
 					                <label for="">Avatar</label>
-					                <input type="text" class="form-control" id="" placeholder="" name="avatar">
+					                <input type="file" class="form-control" id="" placeholder="" name="avatar">
 					            </div>
 					            <div class="form-group">
 					                <label for="">Created At</label>
 					                <input type="text" class="form-control" id="" placeholder="" name="created_at">
 					            </div>
-							    <button style="margin-bottom: 30px" type="submit" class="btn btn-primary">Create</button>
+							    <button style="margin-bottom: 30px" type="submit" name="upload" class="btn btn-primary">Create</button>
 							 </form>
                            </div>
                        </div>

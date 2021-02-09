@@ -8,7 +8,7 @@ class Model {
 	}
 	protected function select($table, $columns = '*'){
 		if ($columns == '*') {
-			$query = "SELECT * FROM ". $table;
+			$query = "SELECT * FROM ". $table . " ORDER BY (created_at) DESC ";
 		}
 		else if(is_array($columns))
 		{
@@ -19,7 +19,33 @@ class Model {
 					$sub_string .= ',';
 				}
 			}
-			$query  = "SELECT " . $sub_string . " FROM " . $table;
+			$query  = "SELECT " . $sub_string . " FROM " . $table. " ORDER BY (created_at) DESC ";
+		}
+		else{
+			exit();
+		}
+		$result = $this->conn->query($query);
+		$data = array();
+		while ($row = $result->fetch_assoc()) {
+			$data[] = $row;
+		}
+		return $data;
+	}
+
+	protected function selectView($table, $columns = '*'){
+		if ($columns == '*') {
+			$query = "SELECT * FROM ". $table . " ORDER BY (view_count) DESC LIMIT 4 ";
+		}
+		else if(is_array($columns))
+		{
+			$sub_string = '';
+			foreach ($columns as $i => $column) {
+				$sub_string .= $column;
+				if ($i + 1 != count($columns)) {
+					$sub_string .= ',';
+				}
+			}
+			$query  = "SELECT " . $sub_string . " FROM " . $table. " ORDER BY (view_count) DESC LIMIT 4 ";
 		}
 		else{
 			exit();
@@ -84,6 +110,12 @@ class Model {
 		$row = $result->fetch_assoc();
 		return $row;
 		}
+	protected function getEmail($table,$email){
+		$query = "SELECT * from $table WHERE email = ". $email;
+		$result = $this->conn->query($query);
+		$row = $result->fetch_assoc();
+		return $row;
+		}	
 	protected function where($table,$where = []){
 		$query = "SELECT * from $table WHERE ";
 		$string = '';

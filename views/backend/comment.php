@@ -6,10 +6,14 @@
                         
                             
                             <div class="sub-title">
-                              <h2>Detail Post</h2>
-                              <a href="contact.html"><i class="icon-envelope"></i></a>
-                              <p><a href="index.php?type=backend&mod=post&act=index">BACK</a></p>
+                              <h2>Comment</h2>
+                              <?php if (isset($_COOKIE['delete'])) { ?>
+                                  <div class="alert alert-danger" role="alert">
+                                    <?php echo $_COOKIE['delete'] ?>
+                                  </div>
+                              <?php } ?>
                              </div>
+                            
                             
                             <div class="col-md-12 content-page">
                               
@@ -19,27 +23,28 @@
                                      <table class="table">
                                         <thead>
                                           <tr>
-                                            <th scope="col">Thumbnail</th>
+                                            <th scope="col">#ID</th>
+                                            <th scope="col">#Parent ID</th>
+                                            <th scope="col">Tên</th>
+                                            <th scope="col">Email</th>
                                             <th scope="col">Content</th>
-                                            <th scope="col">Slug</th>
-                                            <th scope="col">Tag</th>
-                                            <th scope="col">View Count</th>
-                                            <th scope="col">Category</th>
-                                            <th scope="col">User</th>
-                                            <th scope="col">Create At</th>
+                                            <th scope="col">Created At</th>
                                           </tr>
                                         </thead>
                                         <tbody>
+                                          <?php foreach ($comments as $key => $value) { ?>
+                                          
                                               <tr>
-                                                  <td class="post"><?php echo "<img src='images/post/".$post['thumbnail']."' >"; ?></td?>
-                                                  <td><p style="height: 300px; overflow: auto;"><?php echo $post['content']?></p></td>
-                                                  <td><?php echo $post['slug']; ?></td>
-                                                  <td><?php echo $post['tag']; ?></td>
-                                                  <td><?php echo $post['view_count']; ?></td>
-                                                  <td><?php echo $category_name['name']; ?></td>
-                                                  <td><?php echo $user_name['name']; ?></td>
-                                                  <td><?php echo $post['created_at']; ?></td>
+                                                  <td><?php echo $value['id']; ?></td?>
+                                                  <td><?php echo $value['parent_id']; ?></td?>
+                                                  <td><?php echo $value['user_name']; ?></td?>
+                                                  <td><?php echo $value['email']; ?></td?>
+                                                  <td><?php echo $value['content']; ?></td>
+                                                  <td>
+                                                      <a href="index.php?type=backend&mod=comment&act=delte&id=<?php echo $value['id']?>" class="btn btn-danger">Delete</a>
+                                                  </td>
                                               </tr>
+                                          <?php } ?>
                                         </tbody>
                                 </table>
                             
@@ -50,7 +55,7 @@
                                  <a href="javascript:void(0)" id="load-more-post" class="load-more-button">Load</a>
                                  <div id="post-end-message"></div>
                                 </div>
-                                
+                                  
                              </div>
                               
                          </div>

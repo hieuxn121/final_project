@@ -1,23 +1,19 @@
 <?php 
 	require_once('core/Model.php');
-	class Category extends Model
+	class Comment extends Model
 	{
-		private $table = "categories";
+		private $table = "comment";
 		public function getList(){
-			$categories = $this->select($this->table);
-			return $categories;
+			$comments = $this->select($this->table);
+			return $comments;
 		}
 		public function create($data){
 			$status = $this->insert($this->table,$data);
 			return $status;
 		}
-		public function fix($data,$id){
-			$status = $this->update($this->table,$data,$id);
-			return $status;
-		}
 		public function find($id){
-			$category = $this->getID($this->table,$id);
-			return $category;
+			$comment = $this->getPost($this->table,$id);
+			return $comment;
 		}
 		public function del($id){
 			$status = $this->delete($this->table,$id);

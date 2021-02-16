@@ -115,7 +115,29 @@ class Model {
 		$result = $this->conn->query($query);
 		$row = $result->fetch_assoc();
 		return $row;
-		}	
+		}
+	protected function getPost($table,$post_id){
+		$query = "SELECT * from $table WHERE post_id = ". $post_id. " ORDER BY (created_at) DESC ";
+		$result = $this->conn->query($query);
+		while($row = $result->fetch_assoc()) { 
+			$post[] = $row;
+		}
+		if (isset($post))
+			return $post;
+		else 
+			return NULL;
+	}
+	protected function keySearch($table,$search){
+		$query = "SELECT * from $table where tag like '%$search%' ";
+		$result = $this->conn->query($query);
+		while($row = $result->fetch_assoc()) { 
+			$post[] = $row;
+		}
+		if (isset($post))
+			return $post;
+		else 
+			return NULL; 
+	}
 	protected function where($table,$where = []){
 		$query = "SELECT * from $table WHERE ";
 		$string = '';

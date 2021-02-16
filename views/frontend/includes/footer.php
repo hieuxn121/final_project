@@ -14,7 +14,6 @@
 	<script src="assets2/js/jquery.waypoints.min.js"></script>
 	<!-- Main JS -->
 	<script src="assets2/js/main.js"></script>
-
 	</body>
 </html>
 

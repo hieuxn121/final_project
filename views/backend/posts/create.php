@@ -33,6 +33,10 @@
 						                <input type="text" class="form-control" id="" placeholder="" name="slug">
 						            </div>
 						            <div class="form-group">
+						                <label for="">Tag</label>
+						                <input type="text" class="form-control" id="" placeholder="" name="tag">
+						            </div>
+						            <div class="form-group">
 						                <label for="">View Count</label>
 						                <input type="text" class="form-control" id="" placeholder="" name="view_count">
 						            </div>

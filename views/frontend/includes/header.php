@@ -49,8 +49,6 @@
 	<link rel="stylesheet" href="assets2/css/bootstrap.css">
 
 	<link rel="stylesheet" href="assets2/css/style.css">
-
-
 	<!-- Modernizr JS -->
 	<script src="assets2/js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -88,12 +86,10 @@
 			<h3 class="heading"><a href="index.php?type=backend&mod=auth&act=login">Log in</a></h3>
 			<div class="fh5co-box">
 				<h3 class="heading">Search</h3>
-				<form action="#">
+				<form action="index.php?type=frontend&mod=post&act=search" method="POST">
 					<div class="form-group">
-						<form action="" method="POST">
-							<input type="text" class="form-control" placeholder="Type a keyword" name="search">
-							<input type="submit">
-						</form>	
+							<input type="text" class="form-control" placeholder="Type a keyword" name="key">
+							<button type="submit" name="ok" style="margin-top: 20px" class="btn btn-primary">Search</button>
 					</div>
 				</form>
 			</div>

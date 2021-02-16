@@ -13,12 +13,12 @@
 			$posts = $this->selectView($this->table);
 			return $posts;
 		}
+		public function getKeyPost($data){
+			$posts = $this->keySearch($this->table,$data);
+			return $posts;
+		}
 		public function create($data){
 			$status = $this->insert($this->table,$data);
-			return $status;
-		}
-		public function move($id){
-			$status = $this->delete($this->table,$id);
 			return $status;
 		}
 		public function fix($data,$id){

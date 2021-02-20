@@ -9,7 +9,7 @@
 				<figure class="animate-box">
 					<img src="<?php echo('images/post/'.$posts['thumbnail']) ;?>" alt="Image" class="img-responsive">
 				</figure>
-				<span class="fh5co-meta"><a href="index.php?type=frontend&mod=post&act=detail&id=<?php echo $value['id'] ?>">
+				<span style="font-size: 25px"><a href="index.php?type=frontend&mod=post&act=detail&id=<?php echo $value['id'] ?>">
 					<?php $code = $posts['category_id'];
 						foreach ($categories as $key => $value2) {
 							if ($value2['id'] == $code) {
@@ -17,7 +17,7 @@
 							}
 						}
 					?>
-				</a></span>
+				</a></span><span style="font-size: 25px"><span><a> / </a></span><a href="index.php?type=frontend&mod=home&act=index">Home</span>
 				<h2 class="fh5co-article-title animate-box"><?php echo $posts['title']; ?></h2>
 				<span class="fh5co-meta fh5co-date animate-box"><?php $code = $posts['user_id'];echo $users[$code-1]['name'];?></span>
 				<span class="fh5co-meta fh5co-date animate-box"><?php echo $posts['created_at']; ?></span>
@@ -25,7 +25,18 @@
 				<div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
 					<div class="row">
 						<div class="col-lg-12 cp-r animate-box">
-							<pre style="background-color: white"> <?php echo $posts['content']; ?> </pre>
+							<?php foreach (explode(PHP_EOL, $posts['content']) as $key => $value) {?>
+								<p><?php echo $value; ?></p>
+							<?php } ?>
+						</div>	
+					</div>
+				</div>
+				<div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
+					<div class="row">
+						<div class="col-lg-12 cp-r animate-box">
+									<?php $tag =  $posts['tag']; foreach(explode(',', $tag) as $key => $value){;?>
+										<span style="background-color: #e4e4f9; padding: 5px; cursor: pointer;color: #f7c873">#<?php echo $value; ?></span>
+									<?php }?>	
 						</div>	
 					</div>
 				</div>

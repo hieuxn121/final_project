@@ -16,11 +16,9 @@
     <meta name="robots" content="index,follow">
     
     
-    <title>DevBlog - Personal Blog Template</title>
+    <title>Lowkey Blog - Personal Blog Template</title>
     
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="144x144" type="image/x-icon" href="assets/images/favicon/apple-touch-icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <!-- All CSS Plugins -->
     <link rel="stylesheet" type="text/css" href="assets/css/plugin.css">

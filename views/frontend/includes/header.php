@@ -1,3 +1,12 @@
+<?php 
+						foreach ($categories as $key => $value) {
+							foreach ($categories as $key2 => $value2) {
+								if ($value2['parent_id'] == $value['id']) {
+										$arrS[$value['id']][$value2['id']] = $value2;
+								}
+							}
+						}
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -6,7 +15,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Magazine &mdash; Free Fully Responsive HTML5 Bootstrap Template by FREEHTML5.co</title>
+	<title>LowKey Blog &mdash; Free Fully Responsive HTML5 Bootstrap Template by FREEHTML5.co</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -78,8 +87,19 @@
 				<h3 class="heading">Categories</h3>
 				<ul>
 					<li><a href="index.php?type=frontend&mod=home&act=index">Home</a></li>
-					<?php foreach ($categories as $key => $value){ ?>
-						<li><a href="index.php?type=frontend&mod=category&act=index&id=<?php echo $value['id'] ?>"><?php echo $value['name'] ?></a></li>
+					<?php foreach ($arrS as $key => $value) {?>
+						<div class="dropdown">
+							  <li style="cursor: pointer;" class="dropdown-toggle"id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    <a>
+								  	<?php foreach($categories as $key2 => $value2){if($value2['id'] == $key) echo $value2['name']?><?php } ?>	
+								</a>
+							  </li>
+							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							    <?php foreach($value as $key => $data){ ?>
+								    <li><a href="index.php?type=frontend&mod=category&act=index&id=<?php echo $data['id'] ?>"><?php echo $data['name'] ?></a></li>
+								  <?php  }?>
+							  </div>
+							</div>
 					<?php } ?>
 				</ul>
 			</div>
@@ -103,12 +123,11 @@
 			<div class="row">
 				<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 				<ul class="fh5co-social">
-					<li><a href="#"><i class="icon-twitter"></i></a></li>
-					<li><a href="#"><i class="icon-facebook"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
+					<li><a href="https://www.facebook.com/hieu.nd1201"><i class="icon-facebook"></i></a></li>
+					<li><a href="https://www.instagram.com/hieusng/"><i class="icon-instagram"></i></a></li>
 				</ul>
 				<div class="col-lg-12 col-md-12 text-center">
-					<h1 id="fh5co-logo"><a href="index.html">Magazine <sup>TM</sup></a></h1>
+					<h1 id="fh5co-logo"><a href="index.html">LowKey<sup>NH</sup></a></h1>
 				</div>
 
 			</div>

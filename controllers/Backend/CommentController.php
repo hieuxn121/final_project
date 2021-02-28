@@ -9,8 +9,8 @@
  		$this->view('backend/comment.php',['comments' => $comments]);
  	}
  	public function store(){
-			 $data = $_POST;
-			 $data_insert = [
+			$data = $_POST;
+			$data_insert = [
     		'id' => $data['id'],
 	    	'parent_id' => $data['parent_id'],
 	    	'user_name' => $data['user_name'],
@@ -25,12 +25,15 @@
 		}
 	public function delte(){
 			$id = $_GET['id'];
+			$cm = $_GET['cm'];
+			$category_id = $_GET['category_id'];
+			$user_id = $_GET['user_id'];
 			$comment_obj = new Comment();
-			$comment = $comment_obj->del($id);
+			$comment = $comment_obj->del($cm);
 			if ($comment== true) {
 				setcookie('delete',"Xóa một mục thành công", time()+2);
 			}
-			$this->redirect('index.php?type=backend&mod=comment&act=index');
+			$this->redirect('index.php?type=backend&mod=post&act=detail&id='.$id.'&category_id='.$category_id.'&user_id='.$user_id);
 		}	
  }
  ?>

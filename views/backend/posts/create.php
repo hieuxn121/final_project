@@ -18,7 +18,7 @@
 						            </div>
 						            <div class="form-group">
 						                <label for="">Description</label>
-						                <input type="text" class="form-control" id="" placeholder="" name="description">
+						                <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
 						            </div>
 						            <div class="form-group">
 						                <label for="">Thumbnail</label>
@@ -58,4 +58,9 @@
                        </div>
                     </div>         
 </div>
+<script>
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace( 'content' );
+</script>
 <?php require_once('views/backend/includes/footer.php') ?>                        

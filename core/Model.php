@@ -129,9 +129,21 @@ class Model {
 	}
 	protected function keySearch($table,$search){
 		$query = "SELECT * from $table where tag like '%$search%' ";
+		$query2 = "SELECT * from $table where title like '%$search%' ";
 		$result = $this->conn->query($query);
+		$result2 = $this->conn->query($query2);
 		while($row = $result->fetch_assoc()) { 
 			$post[] = $row;
+		}
+		while($row = $result2->fetch_assoc()) { 
+			$post[] = $row;
+		}
+		for ($i=0; $i < count($post); $i++) { 
+			for ($j=0; $j < $i; $j++) { 
+				if ($post[$j] == $post[$i]) {
+					unset($post[$i]);
+				}
+			}
 		}
 		if (isset($post))
 			return $post;

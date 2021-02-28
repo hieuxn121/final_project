@@ -58,6 +58,7 @@
 	<link rel="stylesheet" href="assets2/css/bootstrap.css">
 
 	<link rel="stylesheet" href="assets2/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 	<!-- Modernizr JS -->
 	<script src="assets2/js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -74,8 +75,8 @@
 				<img src="assets2/images/ava.png" alt="Free HTML5 Bootstrap Template" class="img-responsive">
 			</figure>
 			<h3 class="heading">About Me</h3>
-			<h2>Nguyen Duc Hieu</h2>
-			<p>Far far away, behind the word mountains, far from the countries Nam Dinh, Viet Nam there live the blind texts. </p>
+			<h2>Nguyễn Đức Hiếu</h2>
+			<p>Điểm đến và nghệ thuật ảnh film. Nơi mọi người có thẻ tìm thấy cho mình một chút sự thú vị. Cảm ơn vì đã ghé qua ... </p>
 			<ul class="fh5co-social">
 				<li><a href="https://www.facebook.com/hieu.nd1201"><i class="icon-facebook"></i></a></li>
 				<li><a href="https://www.instagram.com/hieusng/"><i class="icon-instagram"></i></a></li>
@@ -84,9 +85,9 @@
 
 		<div class="fh5co-menu">
 			<div class="fh5co-box">
-				<h3 class="heading">Categories</h3>
+				<h3 class="heading">Danh mục</h3>
 				<ul>
-					<li><a href="index.php?type=frontend&mod=home&act=index">Home</a></li>
+					<li><a href="index.php?type=frontend&mod=home&act=index">Trang chủ</a></li>
 					<?php foreach ($arrS as $key => $value) {?>
 						<div class="dropdown">
 							  <li style="cursor: pointer;" class="dropdown-toggle"id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -103,13 +104,13 @@
 					<?php } ?>
 				</ul>
 			</div>
-			<h3 class="heading"><a href="index.php?type=backend&mod=auth&act=login">Log in</a></h3>
+			<h3 class="heading"><a href="index.php?type=backend&mod=auth&act=login">Đăng nhập</a></h3>
 			<div class="fh5co-box">
-				<h3 class="heading">Search</h3>
+				<h3 class="heading">Tìm kiếm</h3>
 				<form action="index.php?type=frontend&mod=post&act=search" method="POST">
 					<div class="form-group">
 							<input type="text" class="form-control" placeholder="Type a keyword" name="key">
-							<button type="submit" name="ok" style="margin-top: 20px" class="btn btn-primary">Search</button>
+							<button type="submit" name="ok" style="margin-top: 20px" class="btn btn-primary">Tìm</button>
 					</div>
 				</form>
 			</div>

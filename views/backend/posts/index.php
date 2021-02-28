@@ -41,7 +41,7 @@
                   <?php foreach ($posts as $key => $value) { ?>
                       <tr>
                           <td style="width: 20px;"><?php echo $value['id']; ?></td?>
-                          <td><a href="index.php?type=frontend&mod=post&act=detail&id=<?php echo $value['id']?>"><?php echo $value['title']; ?></a></td?>
+                          <td><a target="_blank" href="index.php?type=frontend&mod=post&act=detail&id=<?php echo $value['id']?>"><?php echo $value['title']; ?></a></td?>
                           <td>
                               <a href="index.php?type=backend&mod=post&act=detail&id=<?php echo $value['id']?>&category_id=<?php echo $value['category_id']?>&user_id=<?php echo $value['user_id']?>" class="btn btn-primary"><i class="fas fa-info-circle"></i></a>
                               <a href="index.php?type=backend&mod=post&act=edit&id=<?php echo $value['id']?>" class="btn btn-success"><i class="fas fa-edit"></i></a>

@@ -104,7 +104,10 @@
 					<?php } ?>
 				</ul>
 			</div>
-			<h3 class="heading"><a href="index.php?type=backend&mod=auth&act=login">Đăng nhập</a></h3>
+			<h3 class="heading">
+					<?php if (isset($_SESSION['user_login']))  { echo '<a href="index.php?type=backend&mod=dashboard&act=index">Quản lí</a>'; }?>
+					<?php if (!isset($_SESSION['user_login']))  { echo '<a href="index.php?type=backend&mod=auth&act=login">Đăng nhập</a>'; } ?>
+			</h3>
 			<div class="fh5co-box">
 				<h3 class="heading">Tìm kiếm</h3>
 				<form action="index.php?type=frontend&mod=post&act=search" method="POST">

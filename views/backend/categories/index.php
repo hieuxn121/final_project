@@ -43,7 +43,7 @@
                   
                       <tr>
                           <td><?php echo $value['id']; ?></td?>
-                          <td><a href="index.php?type=frontend&mod=category&act=index&id=<?php echo $value['id']?>"><?php echo $value['name']; ?></a></td?>
+                          <td><a target="_blank" href="index.php?type=frontend&mod=category&act=index&id=<?php echo $value['id']?>"><?php echo $value['name']; ?></a></td?>
                           <td>
                               <a href="index.php?type=backend&mod=category&act=detail&id=<?php echo $value['id']?>" class="btn btn-primary"><i class="fas fa-info-circle"></i></a>
                               <a href="index.php?type=backend&mod=category&act=edit&id=<?php echo $value['id']?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
